@@ -1,3 +1,5 @@
+# stt.py
+
 import os
 from faster_whisper import WhisperModel
 import time
