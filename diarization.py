@@ -3,7 +3,7 @@ from pyannote.audio import Pipeline
 class SpeakerDiarization:
     def __init__(self, audio_file):
         self.audio_file = audio_file
-        self.pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization")
+        self.pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization", use_auth_token="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")
 
     def diarize(self):
         diarization = self.pipeline({"uri": self.audio_file, "audio": self.audio_file})

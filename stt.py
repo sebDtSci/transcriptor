@@ -15,24 +15,32 @@ class SpeechToText:
         self.transcribtion = ""
     
     def _write(self):
-        with open(self.output_file, 'w') as f:
-            f.write(self.transcribtion)
+        with open(self.output_file, 'a') as f: # a et pas w
+            # f.write(self.transcribtion)
+            f.write(self.transcribtion + '\n')
 
     def start(self):
         if not os.path.isfile(self.input_audio):
             raise FileNotFoundError(f"The file {self.input_audio} does not exist or is not readable.")
         
         self.running = True
+        all_transcriptions = []  # Liste pour stocker toutes les transcriptions
+
 
         while self.running:
             try:
                 segments, info = self.model.transcribe(self.input_audio)
                 text = " ".join([segment.text for segment in segments])
+                # all_transcriptions.append(text)  # Ajouter chaque nouvelle transcription
                 self.transcribtion = text
                 self._write()
-                time.sleep(0.1)
+                # time.sleep(0.1)
             except Exception as e:
                 logging.error(f"Transcription failed: {e}")
+        # transcribtion_final = "\n".join(all_transcriptions)
+        # print(transcribtion_final)
+        # self.transcribtion = transcribtion_final
+        # self._write()
     
 if __name__ == "__main__":
     load_dotenv()

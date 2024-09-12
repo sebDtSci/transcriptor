@@ -1,0 +1,6 @@
+ you
+ Alors, en utilisant...
+ Alors, en utilisant le réseau de normande convolutif Spacey
+ Alors, en utilisant le réseau de neuron convolutif spaCy, nous avons représenté chaque phrase  comme un réseau de dépendance.
+ le réseau de neurones convolutif spaCy. Nous avons représenté chaque phrase comme un réseau de  dépendance et grâce à l'outil open source BERT, en utilisant le concept d'attention de transformation,
+ Open Source Bert, en utilisant le concept d'attention, de transformation, le Transfer Learning nous a permis de réaliser un apprentissage profond avec un volume tout à fait raisonnable d'exemples.
